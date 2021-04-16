@@ -1,8 +1,16 @@
-function RestroomList() {
-    return(
-        <div className="restroom-list">
+import Restroom from "./Restroom";
 
-        </div>
+function RestroomList({ restrooms }) {
+    const restroomLinks = restrooms.map(restroom => {
+        return(
+            <Restroom key={restroom.id} restroom={restroom}/>
+        )
+    })
+
+    return(
+        <ul className="restroom-list">
+            {restroomLinks}
+        </ul>
     )
 }
 

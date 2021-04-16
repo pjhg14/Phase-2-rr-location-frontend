@@ -1,8 +1,10 @@
-function Restroom() {
-    return(
-        <div className="restroom-card">
+function Restroom({ restroom }) {
+    const { address, borough,type,image,hours,handicap } = restroom
 
-        </div>
+    return(
+        <li className="restroom-card">
+            {address}
+        </li>
     )
 }
 
