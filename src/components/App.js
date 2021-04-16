@@ -9,6 +9,7 @@ import UserPage from "./main-content/UserPage";
 
 function App() {
     const [restrooms, setRestrooms] = useState([])
+    console.log(restrooms)
 
     useEffect(() => {
         fetch("http://localhost:4000/restrooms")
@@ -22,9 +23,9 @@ function App() {
         <div className="App">
             <Header/>
             <Nav restrooms={restrooms}/>
-            <Switch>
+            {/* <Switch>
                 <Route exact path="/">
-                    {/* image */}
+                    
                 </Route>
                 <Route>
                     <AddRestroomPage/>
@@ -35,7 +36,7 @@ function App() {
                 <Route>
                     <UserPage/>
                 </Route>
-            </Switch>
+            </Switch> */}
         </div>
     );
 }
