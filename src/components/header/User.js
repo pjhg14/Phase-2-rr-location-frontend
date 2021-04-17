@@ -33,7 +33,8 @@ function User() {
                     { error.length > 0 &&     //If error text exists (longer than 0) display error text
                         <p className="error">{error}</p>
                     }
-                </div>}
+                </div>
+            }
         </div>
     )
 }
