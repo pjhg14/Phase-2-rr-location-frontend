@@ -1,9 +1,10 @@
 function Restroom({ restroom }) {
-    const { address, borough,type,image,hours,handicap } = restroom
+    const { name, location, borough,type,image,hours,handicap } = restroom
 
     return(
         <li className="restroom-card">
-            {address}
+            {name}
+            {borough}
         </li>
     )
 }
