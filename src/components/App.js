@@ -23,20 +23,21 @@ function App() {
         <div className="App">
             <Header/>
             <Nav restrooms={restrooms}/>
-            {/* <Switch>
+            <Switch>
                 <Route exact path="/">
-                    
+                    <img className="home-img" src="" alt="home-img"/>
+                    <p>Please select a restroom</p>
                 </Route>
-                <Route>
+                <Route exact path="/add-restroom">
                     <AddRestroomPage/>
                 </Route>
-                <Route>
+                <Route exact path="/restroom-info">
                     <RestroomPage/>
                 </Route>
-                <Route>
+                <Route exact path="/user-info">
                     <UserPage/>
                 </Route>
-            </Switch> */}
+            </Switch>
         </div>
     );
 }
