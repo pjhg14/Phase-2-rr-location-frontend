@@ -1,11 +1,12 @@
+import { NavLink } from "react-router-dom"
+
 function Restroom({ restroom }) {
-    const { name, location, borough,type,image,hours,handicap } = restroom
+    const { id, name, address, borough } = restroom
 
     return(
-        <li className="restroom-card">
-            {name}
-            {borough}
-        </li>
+        <NavLink className="restroom-card" to={`/restroom-info/:${id}`}>
+            {`${name}:  ${address} | ${borough}`}
+        </NavLink>
     )
 }
 

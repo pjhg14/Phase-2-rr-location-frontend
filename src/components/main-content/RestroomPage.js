@@ -1,6 +1,14 @@
 import Comment from "./Coment"
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function RestroomPage() {
+    // const { id } = useParams() 
+
+    // useEffect(() => {
+    //     //fetch data from id
+    // })
+
     return(
         <div className="restroom-page">
             <div className="info">

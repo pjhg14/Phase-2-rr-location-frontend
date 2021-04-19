@@ -31,7 +31,7 @@ function App() {
                 <Route exact path="/add-restroom">
                     <AddRestroomPage/>
                 </Route>
-                <Route exact path="/restroom-info">
+                <Route exact path="/restroom-info/:id">
                     <RestroomPage/>
                 </Route>
                 <Route exact path="/user-info">

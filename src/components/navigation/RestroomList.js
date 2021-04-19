@@ -21,9 +21,9 @@ function RestroomList({ restrooms }) {
     return(
         <main>
           <button onClick={(e) => setSortBy(!sortBy)}>Sort By Borough</button>
-            <ul className="restroom-list">
-            {restroomLinks}
-             </ul>
+            <nav className="restroom-list">
+                {restroomLinks}
+            </nav>
         </main>
 
     )
