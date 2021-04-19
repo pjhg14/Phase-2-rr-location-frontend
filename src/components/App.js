@@ -8,6 +8,8 @@ import RestroomPage from "./main-content/RestroomPage";
 import UserPage from "./main-content/UserPage";
 
 function App() {
+    const [currentUser, setCurrentUser] = setState(null)
+    const [loggedIn, setLoggedIn] = useState(false)
     const [restrooms, setRestrooms] = useState([])
     console.log(restrooms)
 
@@ -18,6 +20,11 @@ function App() {
                 setRestrooms(queriedRestrooms)
             })
     }, [])
+
+    function handleUserLoginSignUp(user) {
+        setCurrentUser(user)
+        setLoggedIn(false)
+    }
 
     return (
         <div className="App">

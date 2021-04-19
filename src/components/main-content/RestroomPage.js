@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function RestroomPage() {
+    // add conditional rendering (loading if no id; info if)
     // const { id } = useParams() 
 
     // useEffect(() => {
