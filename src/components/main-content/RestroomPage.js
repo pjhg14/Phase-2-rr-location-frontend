@@ -1,33 +1,51 @@
-import Comment from "./Coment"
-import { useEffect } from "react";
+import Comment from "./Comment";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import CommentForm from "./CommentForm";
 
 function RestroomPage() {
-    // add conditional rendering (loading if no id; info if)
-    // const { id } = useParams() 
+    const { id } = useParams() 
+    const [restroom, setRestroom] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
 
-    // useEffect(() => {
-    //     //fetch data from id
-    // })
+
+    useEffect(() => {
+        fetch(`http://localhost:4000/restrooms/${id}?_embed=comments`)
+          .then((r) => r.json())
+          .then((restroom) => {
+              setRestroom(restroom);
+              setIsLoaded(true);
+          });
+    }, [id]);
+
+    if (!isLoaded) return <h2>Loading...</h2>;
+
+    const {image, name, address, borough, hours, type, handicap, likes, dislikes, comments} = restroom;
+
+    const commentsArray = comments.map((comment) => {
+        return <Comment key={comment.id} comment={comment}/>
+    })
+
 
     return(
         <div className="restroom-page">
             <div className="info">
                 {/* enter current restroom info here */}
                 <p>Restroom Info:</p>
-                <p>image</p>
-                <p>address</p>
-                <p>borough</p>
-                <p>type</p>
-                <p>hours</p>
-                <p>handicap accessible?</p>
-                <p>likes</p>
-                <p>dislikes</p>
+                <img src={image}></img>
+                <p>address: {address}</p>
+                <p>borough: {borough}</p>
+                <p>type: {type}</p>
+                <p>hours: {hours}</p>
+                <p>handicap accessible?: {handicap}</p>
+                <p>likes: {likes}</p>
+                <p>dislikes: {dislikes}</p>
             </div>
             <div className="comments">
+                <CommentForm commentList={comments}/>
                 <p>Comments:</p>
                 {/* Enter comments */}
-                <Comment/>
+                {commentsArray}
             </div>
         </div>
     )

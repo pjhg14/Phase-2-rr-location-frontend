@@ -1,8 +1,9 @@
 function Search() {
     return(
-        <div className="search">
-
-        </div>
+        <select className="search">
+            <option>Filter By:</option>
+            <option value="">Borough</option>
+        </select>
     )
 }
 
