@@ -1,9 +1,10 @@
 import { useState } from "react"
+import { useParams } from "react-router"
 
 function User() {
     const [ddShow, setDdShow] = useState(false)
     const [error, setError] = useState("")
-    const { id } = useParams
+    const { id } = useParams()
 
 
     function handleFormSubmit(event) {
