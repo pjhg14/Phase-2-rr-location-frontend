@@ -6,7 +6,7 @@ function CommentForm(commentList) {
     
     function handleSubmit(event) {
         event.preventDefault();
-        let newComment = {author: "", content: content, id: id}
+        let newComment = {author: "", content: content}
         
         fetch("http://localhost:4000/comments", {
             method: 'POST',
