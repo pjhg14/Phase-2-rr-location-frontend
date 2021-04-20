@@ -1,14 +1,22 @@
 import { useState } from "react"
+import { useParams } from "react-router"
 
 function User() {
     const [ddShow, setDdShow] = useState(false)
     const [error, setError] = useState("")
+    const { id } = useParams()
+
 
     function handleFormSubmit(event) {
         event.preventDefault()
 
         if (event.target.username.value !== "") {
             //submit form
+            fetch(`http://localhost:4000/users${id}`)
+                .then((resp) => resp.json())
+                .then(queriedUser => {
+                    //setcurrent user
+                })
 
             //all done, no errors to show
             setError("")
