@@ -12,9 +12,9 @@ function RestroomList({ restrooms }) {
     return(
         <main>
           {/* <button onClick={(e) => setSortByBorough(!sortByBorough)}>Sort By Borough</button> */}
-            <nav className="restroom-list">
+            <ul className="restroom-list">
                 {restroomLinks}
-            </nav>
+            </ul>
         </main>
 
     )

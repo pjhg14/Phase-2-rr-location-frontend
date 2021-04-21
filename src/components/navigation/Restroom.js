@@ -4,9 +4,11 @@ function Restroom({ restroom }) {
     const { id, name, address, borough } = restroom
 
     return(
-        <NavLink className="restroom-card" to={`/restroom-info/${id}`}>
-            {`${name}:  ${address} | ${borough}`}
-        </NavLink>
+        <li>
+            <NavLink className="restroom-card" to={`/restroom-info/${id}`}>
+            {`${name}`}
+            </NavLink>
+        </li>
     )
 }
 
