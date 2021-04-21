@@ -1,4 +1,3 @@
-import Search from "./Search";
 import RestroomList from "./RestroomList";
 import {useState} from "react";
 
@@ -12,7 +11,6 @@ function Nav({ restrooms }) {
 
     return(
         <div className="navigation">
-            <Search/>
             <RestroomList restrooms={filteredList}/>
         </div>
     )

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import RestroomList from "../../navigation/RestroomList";
 import CommentBox from "./CommentBox";
 import RestroomInfo from "./RestroomInfo";
 
@@ -12,6 +13,13 @@ function RestroomPage() {
 
     //Set state for whether or not the restroom has loaded
     const [isLoaded, setIsLoaded] = useState(false);
+
+    console.log(restroom)
+
+    function handleAddComment(newComment) {
+        // setComments([...comments, newComment])
+        setRestroom({...restroom, comments:[...restroom.comments, newComment]})
+    }
 
    
 
@@ -35,7 +43,7 @@ function RestroomPage() {
     return(
         <div className="restroom-page">
             <RestroomInfo restroom={restroom}/>
-            <CommentBox id={id} commentList={comments}/>
+            <CommentBox id={id} commentList={comments} handleAddComment={handleAddComment} />
         </div>
     )
 }

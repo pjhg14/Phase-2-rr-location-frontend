@@ -3,8 +3,9 @@ import User from "./User";
 function Header() {
     return(
         <div className="header">
-            {/* logo icon */}
-            <img src="" alt="logo"/>
+            <img className="logo" src="/rrphotos/funny_icons_toilet.png"/>
+            <h1>The Loo Review</h1>
+
             <User/>
         </div>
     )

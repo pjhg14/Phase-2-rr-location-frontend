@@ -29,6 +29,7 @@ function App() {
     return (
         <div className="App">
             <Header/>
+            <div className="flexbox">
             <Nav restrooms={restrooms}/>
             <Switch>
                 <Route exact path="/">
@@ -45,6 +46,7 @@ function App() {
                     <UserPage/>
                 </Route>
             </Switch>
+            </div>
         </div>
     );
 }
