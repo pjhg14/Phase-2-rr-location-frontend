@@ -1,36 +1,44 @@
 import { useState } from "react";
 
-function RestroomInfo({ restroom }) {
+function RestroomInfo({ restroom, onLike, onDislike }) {
     // Destruct info from current restroom
-    const {image, name, address, borough, hours, type, handicap} = restroom;
+    const {image, name, address, borough, hours, type, handicap, likes, dislikes} = restroom;
 
-    // state for current amount of likes
-    const [likes, setLikes] = useState(restroom.likes)
-    const [dislikes, setDislikes] = useState(restroom.dislikes)
+    function handleLikeClick(newLikes) {
+        fetch(`http://localhost:4000/restrooms/${restroom.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify ({ 
+                likes: newLikes
+            })          
+        })
+        .then((r) => r.json())
+        .then(updatedRestroom => {
+            // console.log(updatedRestroom)
+            onLike({...updatedRestroom, comments: [...restroom.comments]})
+        })
+    }
 
-    function handleLikeClick() {
-        console.log(likes)
-        setLikes(likes+1)
-        // fetch(`http://localhost:4000/restrooms/${restroom.id}`, {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json"
-        //   },
-        //   body: JSON.stringify (
-        //     { 
-        //     likes: likes
-        //     }
-        //   )          
-        // })
-        // .then((r) => r.json)
-        // .then(updatedRestroom => {
-        //     setLikes(updatedRestroom.likes)
-        // })
+    function handleDislikeClick(newDislikes) {
+        fetch(`http://localhost:4000/restrooms/${restroom.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                dislikes: newDislikes
+            }),
+        })
+            .then((resp) => resp.json())
+            .then(updatedRestroom => {
+                onDislike({...updatedRestroom, comments: [...restroom.comments]})
+            })
     }
 
     return(
         <div className="info">
-            {/* <p>Restroom Info:</p> */}
             <p className="restroom-name">{name}</p>
             <img src={image}></img>
 
@@ -38,9 +46,9 @@ function RestroomInfo({ restroom }) {
             <p><label>Borough:</label> {borough}</p>
             <p><label>Type:</label> {type}</p>
             <p><label>Hours:</label> {hours}</p>
-            <p><label>Handicap accessible:</label> {handicap}</p>
-            <button onClick={() => {setLikes(likes+1)}}>👍 Like: {likes}</button>
-            <button onClick={() => {setDislikes(dislikes+1)}}>👎 Dislike: {dislikes}</button>
+            <p><label>Handicap accessible?:</label> {handicap ? "Yes" : "No"}</p>
+            <button onClick={() => {handleLikeClick(likes + 1)}}>👍 Like: {likes}</button>
+            <button onClick={() => {handleDislikeClick(dislikes + 1)}}>👎 Dislike: {dislikes}</button>
         </div>
     )
 }

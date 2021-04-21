@@ -14,14 +14,7 @@ function RestroomPage() {
     //Set state for whether or not the restroom has loaded
     const [isLoaded, setIsLoaded] = useState(false);
 
-    console.log(restroom)
-
-    function handleAddComment(newComment) {
-        // setComments([...comments, newComment])
-        setRestroom({...restroom, comments:[...restroom.comments, newComment]})
-    }
-
-   
+    // console.log(restroom)
 
     // When page loads, search server for restroom with current id; set such restroom to current restroom
     useEffect(() => {
@@ -39,11 +32,31 @@ function RestroomPage() {
     // Destruct comments from restroom
     const { comments } = restroom
 
+    function handleAddComment(newComment) {
+        // setComments([...comments, newComment])
+        setRestroom({...restroom, comments:[...restroom.comments, newComment]})
+    }
+
+    function handleLikeInc(likedRestroom) {
+        setRestroom(likedRestroom)
+    }
+
+    function handleDislikeInc(dislikedRestroom) {
+        setRestroom(dislikedRestroom)
+    }
+
+    function handleDeleteComment(target) {
+        const filteredComments = comments.filter(comment => {
+            return comment.id !== target.id
+        })
+        setRestroom({...restroom, comments: filteredComments})
+    }
+
     // Rendering elements
     return(
         <div className="restroom-page">
-            <RestroomInfo restroom={restroom}/>
-            <CommentBox id={id} commentList={comments} handleAddComment={handleAddComment} />
+            <RestroomInfo restroom={restroom} onLike={handleLikeInc} onDislike={handleDislikeInc}/>
+            <CommentBox id={id} commentList={comments} handleAddComment={handleAddComment} handleDeleteComment={handleDeleteComment}/>
         </div>
     )
 }

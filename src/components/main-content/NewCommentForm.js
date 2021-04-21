@@ -6,13 +6,10 @@ function NewCommentForm({ id, onCommentAdd }) {
     function handleSubmit(event) {
         event.preventDefault();
 
-        // console.log(id)
-        // console.log(content)
-
         let newComment = {
-          author: "Anon", 
-          content: content, 
-          restroomId: parseInt(id)
+            author: "Anon", 
+            content: content, 
+            restroomId: parseInt(id)
         }
         
         fetch("http://localhost:4000/comments", {
@@ -21,11 +18,11 @@ function NewCommentForm({ id, onCommentAdd }) {
               "Content-type": "application/json"
             },
             body: JSON.stringify(newComment)
-          })
-          .then((r)=>r.json())
-          .then((postedComment) => {
-            onCommentAdd(postedComment)
-          })
+            })
+                .then((r)=>r.json())
+                .then((postedComment) => {
+                    onCommentAdd(postedComment)
+                })
         
     }
     return (

@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import Restroom from "./Restroom";
-// import styled from "styled-components";
 
 function RestroomList({ restrooms }) {
 
@@ -35,26 +34,30 @@ function RestroomList({ restrooms }) {
         <Restroom key={restroom.id} restroom={restroom} />
     ))
 
-    // const restroomLinks = restrooms.map(restroom => {
-    //     return(
-    //         <Restroom key={restroom.id} restroom={restroom} className="links"/>
-    //     )
-    // })
-
     return(
         <main>
           {/* <button onClick={(e) => setSortByBorough(!sortByBorough)}>Sort By Borough</button> */}
             <nav className="restroom-list">
                 <h3>Manhattan</h3>
-                {filterManhattan}
+                <ul>
+                    {filterManhattan}
+                </ul>
                 <h3>Brooklyn</h3>
-                {filterBrooklyn} 
+                <ul>
+                    {filterBrooklyn} 
+                </ul>
                 <h3>Queens</h3>
-                {filterQueens}
+                <ul>
+                    {filterQueens}
+                </ul>
                 <h3>Bronx</h3>
-                {filterBronx} 
+                <ul>
+                    {filterBronx} 
+                </ul>
                 <h3>StatenIsland</h3>
-                {filterStatenIsland}
+                <ul>
+                    {filterStatenIsland}
+                </ul>
             </nav>
         </main>
 

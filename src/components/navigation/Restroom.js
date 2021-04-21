@@ -5,12 +5,11 @@ function Restroom({ restroom }) {
     const { id, name, address, borough } = restroom
 
     return(
-        <ul>
         <li>
-        <NavLink className="restroom-card" to={`/restroom-info/${id}`}>
-            {name}
-        </NavLink>
-        </li></ul>
+            <NavLink className="restroom-card" to={`/restroom-info/${id}`}>
+                {name}
+            </NavLink>
+        </li>
     )
     }
 export default Restroom
