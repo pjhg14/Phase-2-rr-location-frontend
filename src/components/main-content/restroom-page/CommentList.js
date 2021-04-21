@@ -1,8 +1,8 @@
 import Comment from "../Comment"
 
-function CommentList({ commentList }) {
+function CommentList({ commentList, handleDeleteComment }) {
     const commentDivs = commentList.map(comment => {
-        return <Comment key={comment.id} comment={comment}/>
+        return <Comment key={comment.id} comment={comment} onCommentDelete={handleDeleteComment}/>
     })
 
     return(

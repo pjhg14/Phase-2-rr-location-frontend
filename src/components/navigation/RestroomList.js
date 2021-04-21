@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import Restroom from "./Restroom";
-// import styled from "styled-components";
 
 function RestroomList({ restrooms }) {
 
@@ -34,12 +33,6 @@ function RestroomList({ restrooms }) {
     .map((restroom) => (
         <Restroom key={restroom.id} restroom={restroom} />
     ))
-
-    // const restroomLinks = restrooms.map(restroom => {
-    //     return(
-    //         <Restroom key={restroom.id} restroom={restroom} className="links"/>
-    //     )
-    // })
 
     return(
         <main>
