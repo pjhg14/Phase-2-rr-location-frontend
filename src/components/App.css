@@ -1,11 +1,12 @@
 .App {
     text-align: center;
     font-family: arial;
-    max-width: 80%;
+    align-items: center;
 }
 .flexbox {
     display: flex;
     flex: column;
+    justify-content: center;
 }
 .header {
     display: flex;
@@ -14,23 +15,38 @@
     font-weight: normal;
     letter-spacing: -2pt;
     align-items: center;
+    /* padding-left: 300px;; */
+    justify-content: center;
 }
-.user-icon {
+.toiletpaper {
+    height: 100px;
+    width: 90px; 
+}
+/* .user-icon {
     height: 50px;
     width: 70px;
     position: right;
+} */
+.restroom-page {
+    justify-content: center;
+    max-width: 475px;
+}
+.border-bottom {
+    border-bottom: 1px solid black;
 }
 
 .logo {
-    height: 160px;
-    width: 260px;
+    height: 70px;
+    width: 60px;
     margin: 0px;
+    padding-right: 30px;
 }
 .restroom-list {
     text-align: left;
     font-family: arial;
     width: 300px;
     font-size: 14pt;
+
 }
 p {
     margin: 0;
@@ -41,7 +57,7 @@ a {
 }
 a:hover {
     color: gray;
-    border-top: solid black 3px;
+    border-left: solid black 5px;
 }
 ul {
     list-style-type: none;
@@ -50,7 +66,14 @@ ul {
 }
 .info {
     font-size: 18pt;
-    border: black 3px solid;
+    /* border: black 3px solid; */
+}
+.comment {
+    /* overflow: scroll;
+    height: 40px;
+    border: black 1px solid; */
+    text-align: left;
+    max-width: 400px;
 }
 img {
     border-radius: 8px;
@@ -62,26 +85,65 @@ img {
     letter-spacing: -2pt;
 }
 button {
-    border: none;
+    /* border: none; */
     padding: 10px;
     font-size: 12pt;
     margin-left: 30px;
-    background-color: white;
+    background-color: #fff;
+    border-radius: 10px;
+    border-color: #f1f1f1
+}
+.pop-up {
+    /* display: none; */
+    position: absolute;
+    bottom: 5%;
+    right: 13%;
+    z-index: 9;
 }
 button:hover {
     color: grey;
-    border-top: 3px solid black;
+    /* border-left: 3px solid black; */
+    /* font-weight: bold; */
+    /* padding: 0; */
+
+}
+textarea {
+    border: 3px black solid;
+    width: 300px;
+    height: 100px;
+    margin-top: 30px;
+    
+}
+.submit {
+    display: block;
+    border: black 2px solid;
+    border-radius: 8px;
+    padding: 10px;
+
+}
+.comment-list {
+    overflow: scroll;
+    height: 100px;
+}
+label {
     font-weight: bold;
-
-}
-.comments {
-    border: 3px solid black;
 }
 
-/* .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-} */
+::-webkit-scrollbar {
+    width: 20px;
+}
+  
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #000;
+}
+::-webkit-scrollbar-button {
+    color: black;
+}
 
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {

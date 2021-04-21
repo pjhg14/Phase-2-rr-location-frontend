@@ -3,6 +3,7 @@ import NewCommentForm from "../NewCommentForm"
 import CommentList from "./CommentList"
 
 function CommentBox({ id, commentList, handleAddComment }) {
+    const [addComment, setAddComment] = useState(false)
     // Set state for restroom's comments (currently causing infinite loop)
     // const [comments, setComments] = useState(commentList)
 
@@ -12,9 +13,11 @@ function CommentBox({ id, commentList, handleAddComment }) {
     // Rendering elements
     return(
         <div className="comments">
-            <NewCommentForm id={id} onCommentAdd={handleAddComment}/>
             <p>Comments:</p>
             <CommentList commentList={commentList}/>
+            <button onClick={()=> setAddComment(!addComment)}>Add Comment</button>
+            {addComment && <NewCommentForm id={id} onCommentAdd={handleAddComment}/>}
+
         </div>
     )
 }

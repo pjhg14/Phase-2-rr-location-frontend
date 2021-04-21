@@ -4,7 +4,8 @@ function Comment({comment}) {
     return(
         <div className="comment">
             <p>User: {author}</p>
-            <p>Comment: {content}</p>
+            <p className="border-bottom">Comment: {content}</p>
+            
         </div>
     )
 }

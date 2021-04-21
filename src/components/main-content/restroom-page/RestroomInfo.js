@@ -34,11 +34,11 @@ function RestroomInfo({ restroom }) {
             <p className="restroom-name">{name}</p>
             <img src={image}></img>
 
-            <p>Address: {address}</p>
-            <p>Borough: {borough}</p>
-            <p>Type: {type}</p>
-            <p>Hours: {hours}</p>
-            <p>Handicap accessible?: {handicap}</p>
+            <p><label>Address:</label> {address}</p>
+            <p><label>Borough:</label> {borough}</p>
+            <p><label>Type:</label> {type}</p>
+            <p><label>Hours:</label> {hours}</p>
+            <p><label>Handicap accessible:</label> {handicap}</p>
             <button onClick={() => {setLikes(likes+1)}}>👍 Like: {likes}</button>
             <button onClick={() => {setDislikes(dislikes+1)}}>👎 Dislike: {dislikes}</button>
         </div>
