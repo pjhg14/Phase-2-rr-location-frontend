@@ -1,31 +1,92 @@
 .App {
     text-align: center;
+    font-family: arial;
+    max-width: 80%;
+}
+.flexbox {
+    display: flex;
+    flex: column;
+}
+.header {
+    display: flex;
+    font-size: 40pt;
+    line-height: 38pt;
+    font-weight: normal;
+    letter-spacing: -2pt;
+    align-items: center;
+}
+.user-icon {
+    height: 50px;
+    width: 70px;
+    position: right;
 }
 
-.App-logo {
+.logo {
+    height: 160px;
+    width: 260px;
+    margin: 0px;
+}
+.restroom-list {
+    text-align: left;
+    font-family: arial;
+    width: 300px;
+    font-size: 14pt;
+}
+p {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: gray;
+    border-top: solid black 3px;
+}
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+.info {
+    font-size: 18pt;
+    border: black 3px solid;
+}
+img {
+    border-radius: 8px;
+    width: 400px;
+    height: 250px;
+}
+.restroom-name {
+    font-size: 28pt;
+    letter-spacing: -2pt;
+}
+button {
+    border: none;
+    padding: 10px;
+    font-size: 12pt;
+    margin-left: 30px;
+    background-color: white;
+}
+button:hover {
+    color: grey;
+    border-top: 3px solid black;
+    font-weight: bold;
+
+}
+.comments {
+    border: 3px solid black;
+}
+
+/* .App-logo {
     height: 40vmin;
     pointer-events: none;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
     }
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb; 
 }
 
 @keyframes App-logo-spin {

@@ -3,7 +3,7 @@ function Comment({comment}) {
 
     return(
         <div className="comment">
-            <p>Author: {author}</p>
+            <p>User: {author}</p>
             <p>Comment: {content}</p>
         </div>
     )

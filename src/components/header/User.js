@@ -30,7 +30,7 @@ function User() {
 
     return(
         <div className="user">
-            <img src="" alt="user-img" onClick={() => setDdShow(true)}/>
+            <img src="/rrphotos/user.png" alt="user-img" className="user-icon" onClick={() => setDdShow(true)}/>
             {ddShow && 
                 <div className="dd-menu" onMouseLeave={() => setDdShow(false)}>
                     <p>Login/sign-up</p>

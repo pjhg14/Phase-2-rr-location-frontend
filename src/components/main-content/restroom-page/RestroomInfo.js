@@ -6,19 +6,41 @@ function RestroomInfo({ restroom }) {
 
     // state for current amount of likes
     const [likes, setLikes] = useState(restroom.likes)
+    const [dislikes, setDislikes] = useState(restroom.dislikes)
+
+    function handleLikeClick() {
+        console.log(likes)
+        setLikes(likes+1)
+        // fetch(`http://localhost:4000/restrooms/${restroom.id}`, {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json"
+        //   },
+        //   body: JSON.stringify (
+        //     { 
+        //     likes: likes
+        //     }
+        //   )          
+        // })
+        // .then((r) => r.json)
+        // .then(updatedRestroom => {
+        //     setLikes(updatedRestroom.likes)
+        // })
+    }
 
     return(
         <div className="info">
-            <p>Restroom Info:</p>
+            {/* <p>Restroom Info:</p> */}
+            <p className="restroom-name">{name}</p>
             <img src={image}></img>
-            <p>{name}</p>
-            <p>address: {address}</p>
-            <p>borough: {borough}</p>
-            <p>type: {type}</p>
-            <p>hours: {hours}</p>
-            <p>handicap accessible?: {handicap}</p>
-            <button onClick={() => {likes++}}>likes: {likes}</button>
-            <button onClick={() => {likes++}}>dislikes: dislikes</button>
+
+            <p>Address: {address}</p>
+            <p>Borough: {borough}</p>
+            <p>Type: {type}</p>
+            <p>Hours: {hours}</p>
+            <p>Handicap accessible?: {handicap}</p>
+            <button onClick={() => {setLikes(likes+1)}}>👍 Like: {likes}</button>
+            <button onClick={() => {setDislikes(dislikes+1)}}>👎 Dislike: {dislikes}</button>
         </div>
     )
 }

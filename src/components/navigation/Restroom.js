@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import RestroomList from "./RestroomList"
 
 function Restroom({ restroom }) {
     const { id, name, address, borough } = restroom
@@ -6,10 +7,9 @@ function Restroom({ restroom }) {
     return(
         <li>
             <NavLink className="restroom-card" to={`/restroom-info/${id}`}>
-            {`${name}`}
+                {name}
             </NavLink>
         </li>
     )
-}
-
+    }
 export default Restroom
