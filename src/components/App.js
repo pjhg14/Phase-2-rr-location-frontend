@@ -12,7 +12,7 @@ export const ThemeContext = React.createContext(null)
 export const UserContext = React.createContext(null)
 
 function App() {
-    const [theme, setTheme] = useState("light")
+    const [theme, setTheme] = useState("dark")
     const themeState = {
         get: theme,
         set: setTheme
@@ -39,7 +39,7 @@ function App() {
     return (
         <ThemeContext.Provider value={themeState}>
             <UserContext.Provider value={userState}>
-                <div className="App">
+                <div className={`App ${theme}`}>
                     <Header/>
                     <div className="flexbox">
                     <Nav restrooms={restrooms}/>

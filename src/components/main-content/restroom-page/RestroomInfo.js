@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../App";
+
 function RestroomInfo({ restroom, onLike, onDislike }) {
     // Destruct info from current restroom
     const {image, name, address, borough, hours, type, handicap, likes, dislikes} = restroom;
+    const theme = useContext(ThemeContext)
 
     function handleLikeClick(newLikes) {
         fetch(`http://localhost:4000/restrooms/${restroom.id}`, {
@@ -45,8 +49,8 @@ function RestroomInfo({ restroom, onLike, onDislike }) {
             <p><label>🏪 Type:</label> {type}</p>
             <p><label>🕰 Hours:</label> {hours}</p>
             <p><label>♿ Handicap accessible?:</label> {handicap ? "Yes" : "No"}</p>
-            <button className="dark" onClick={() => {handleLikeClick(likes + 1)}}>👍 Like: {likes}</button>
-            <button className="dark" onClick={() => {handleDislikeClick(dislikes + 1)}}>👎 Dislike: {dislikes}</button>
+            <button className={theme.get} onClick={() => {handleLikeClick(likes + 1)}}>👍 Like: {likes}</button>
+            <button className={theme.get} onClick={() => {handleDislikeClick(dislikes + 1)}}>👎 Dislike: {dislikes}</button>
         </div>
     )
 }

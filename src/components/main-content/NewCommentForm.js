@@ -1,6 +1,8 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
+import { ThemeContext } from "../App";
 
 function NewCommentForm({ id, onCommentAdd, setAddComment }) {
+    const theme = useContext(ThemeContext)
     const [content, setContent] = useState("");
     
     function handleSubmit(event) {
@@ -28,8 +30,8 @@ function NewCommentForm({ id, onCommentAdd, setAddComment }) {
     }
     return (
         <form className="pop-up" onSubmit={handleSubmit}>
-            <textarea className="dark" placeholder="Enter Comment" value={content} onChange={e => {setContent(e.target.value)}}/>
-            <button className="submit dark"type="submit">Submit</button>
+            <textarea className={theme.get} placeholder="Enter Comment" value={content} onChange={e => {setContent(e.target.value)}}/>
+            <button className={`submit ${theme.get}`} type="submit">Submit</button>
         </form>
     )
 }
