@@ -42,13 +42,13 @@ function RestroomInfo({ restroom, onLike, onDislike }) {
             <p className="restroom-name">{name}</p>
             <img src={image}></img>
 
-            <p><label>Address:</label> {address}</p>
-            <p><label>Borough:</label> {borough}</p>
-            <p><label>Type:</label> {type}</p>
-            <p><label>Hours:</label> {hours}</p>
-            <p><label>Handicap accessible?:</label> {handicap ? "Yes" : "No"}</p>
-            <button onClick={() => {handleLikeClick(likes + 1)}}>👍 Like: {likes}</button>
-            <button onClick={() => {handleDislikeClick(dislikes + 1)}}>👎 Dislike: {dislikes}</button>
+            <p><label>🧭 Address:</label> {address}</p>
+            <p><label>🏙  Borough:</label> {borough}</p>
+            <p><label>🏪 Type:</label> {type}</p>
+            <p><label>🕰 Hours:</label> {hours}</p>
+            <p><label>♿ Handicap accessible?:</label> {handicap ? "Yes" : "No"}</p>
+            <button className="dark" onClick={() => {handleLikeClick(likes + 1)}}>👍 Like: {likes}</button>
+            <button className="dark" onClick={() => {handleDislikeClick(dislikes + 1)}}>👎 Dislike: {dislikes}</button>
         </div>
     )
 }

@@ -7,9 +7,9 @@ function CommentBox({ id, commentList, handleAddComment, handleDeleteComment }) 
     // Rendering elements
     return(
         <div className="comments">
-            <p>Comments:</p>
+            <p className="comment-section">Comments:</p>
             <CommentList commentList={commentList} handleDeleteComment={handleDeleteComment}/>
-            <button onClick={()=> setAddComment(!addComment)}>Add Comment</button>
+            <button className="add-comment dark" onClick={()=> setAddComment(!addComment)}>💬 Comment</button>
             {addComment && 
                 <NewCommentForm id={id} onCommentAdd={handleAddComment}/>
             }

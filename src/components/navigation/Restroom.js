@@ -6,7 +6,7 @@ function Restroom({ restroom }) {
 
     return(
         <li>
-            <NavLink className="restroom-card" to={`/restroom-info/${id}`}>
+            <NavLink className="restroom-card dark" to={`/restroom-info/${id}`}>
                 {name}
             </NavLink>
         </li>

@@ -12,10 +12,6 @@
     color: var(--font-color);
     background-color: var(--background-color);
 }
-/* .App.dark {
-    --font-color: white;
-    --background-color: black;
-} */
 .flexbox {
     display: flex;
     flex: column;
@@ -59,7 +55,6 @@ h3 {
 .toiletpaper {
     height: 100px;
     width: 90px; 
-    margin-top: 30px;
 }
 /* .toiletpaper.dark {
     background-image: url("/rrphotos/darktp.jpg");
@@ -112,24 +107,15 @@ a {
     text-decoration: none;
     color: black;
     --font-color: black;
-    /* --background-color:purple; */
-    color: var(--font-color);
-    /* background-color: var(--background-color); */
-
-}
-/* a.dark {
-    --font-color: #999999;
-    --background-color: black;
+    --background-color: white;
     color: var(--font-color);
     background-color: var(--background-color);
-} */
+
+}
 a:hover {
     color: gray;
     border-left: solid black 5px;
 }
-/* a.dark:hover {
-    border-left: solid white 5px;
-} */
 ul {
     list-style-type: none;
     margin: 0px;
@@ -163,18 +149,11 @@ button {
     color: var(--font-color);
     background-color: var(--background-color);
 }
-/* button.dark {    
-    --font-color: #999999; 
-    --background-color: black;
-    color: var(--font-color);
-    background-color: var(--background-color);
-
-} */
 .pop-up {
     /* display: none; */
     position: absolute;
-    bottom: 30%;
-    right: 30%;
+    bottom: 0;
+    right: 40%;
     z-index: 9;
 }
 button:hover {
@@ -195,14 +174,6 @@ textarea {
     background-color: var(--background-color);
     
 }
-/* textarea.dark { 
-    --font-color: #999999;
-    --background-color: black;
-    --border-color: white;
-    color: var(--font-color);
-    background-color: var(--background-color);
-    border-color: var(--border-color);
-} */
 .submit {
     display: block;
     align-items: right;
@@ -215,13 +186,6 @@ textarea {
     color: var(--font-color);
     background-color: var(--background-color);
 }
-/* .submit.dark {    
-    --font-color: #999999;
-    --background-color: black;
-    color: var(--font-color);
-    background-color: var(--background-color);
-
-} */
 /* .add-comment {
     border: none;
     border-left: 3px black solid;
