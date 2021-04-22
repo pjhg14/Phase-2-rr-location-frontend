@@ -27,8 +27,8 @@ function NewCommentForm({ id, onCommentAdd }) {
     }
     return (
         <form className="pop-up" onSubmit={handleSubmit}>
-            <textarea placeholder="Enter Comment" value={content} onChange={e => {setContent(e.target.value)}}/>
-            <button className="submit"type="submit">Submit</button>
+            <textarea className="dark" placeholder="Enter Comment" value={content} onChange={e => {setContent(e.target.value)}}/>
+            <button className="submit dark"type="submit">Submit</button>
         </form>
     )
 }
