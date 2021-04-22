@@ -11,7 +11,7 @@ function CommentBox({ id, commentList, handleAddComment, handleDeleteComment }) 
             <CommentList commentList={commentList} handleDeleteComment={handleDeleteComment}/>
             <button onClick={()=> setAddComment(!addComment)}>Add Comment</button>
             {addComment && 
-                <NewCommentForm id={id} onCommentAdd={handleAddComment}/>
+                <NewCommentForm id={id} onCommentAdd={handleAddComment} setAddComment={setAddComment}/>
             }
         </div>
     )

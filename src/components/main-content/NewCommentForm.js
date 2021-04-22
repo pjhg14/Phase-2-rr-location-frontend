@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-function NewCommentForm({ id, onCommentAdd }) {
+function NewCommentForm({ id, onCommentAdd, setAddComment }) {
     const [content, setContent] = useState("");
     
     function handleSubmit(event) {
@@ -22,6 +22,7 @@ function NewCommentForm({ id, onCommentAdd }) {
                 .then((r)=>r.json())
                 .then((postedComment) => {
                     onCommentAdd(postedComment)
+                    setAddComment(false)
                 })
         
     }

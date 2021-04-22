@@ -1,4 +1,3 @@
-import React, {useState} from "react";
 import Restroom from "./Restroom";
 
 function RestroomList({ restrooms }) {
@@ -54,7 +53,7 @@ function RestroomList({ restrooms }) {
                 <ul>
                     {filterBronx} 
                 </ul>
-                <h3>StatenIsland</h3>
+                <h3>Staten Island</h3>
                 <ul>
                     {filterStatenIsland}
                 </ul>

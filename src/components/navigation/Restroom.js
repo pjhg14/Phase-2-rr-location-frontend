@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom"
-import RestroomList from "./RestroomList"
 
 function Restroom({ restroom }) {
-    const { id, name, address, borough } = restroom
+    const { id, name } = restroom
 
     return(
         <li>
