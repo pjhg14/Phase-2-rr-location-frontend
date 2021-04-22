@@ -64,11 +64,11 @@ h3 {
 /* .toiletpaper.dark {
     background-image: url("/rrphotos/darktp.jpg");
 } */
-/* .user-icon {
+.user-icon {
     height: 50px;
     width: 70px;
     position: right;
-} */
+}
 button.delete-button {
     width: 100%;
     background-color: #383838;
@@ -92,6 +92,17 @@ button.delete-button {
     width: 30px;
     padding-right: 5px;
     /* padding-bottom: 10px; */
+}
+.add-restroom {
+    padding: 10px;
+    font-size: 12pt;
+    color: white;
+    border: 1px black solid;
+    background-color: black;
+    border-radius: 10px;
+}
+.add-restroom:hover {
+    border-left: solid black 1px;
 }
 .restroom-list {
     text-align: left;
@@ -272,4 +283,8 @@ body::-webkit-scrollbar {
 }
 ::-webkit-scrollbar-button {
     color: black;
+<<<<<<< HEAD
 } */
+=======
+}
+>>>>>>> paul

@@ -1,17 +1,11 @@
+import { NavLink } from "react-router-dom";
 import RestroomList from "./RestroomList";
-import {useState} from "react";
 
 function Nav({ restrooms }) {
-    const [filterBorough, setFilterBorough] = useState("All")
-
-    const filteredList = restrooms
-    .filter((restroom) => {
-        return filterBorough === "All" || restroom.borough === filterBorough;
-    })
-
     return(
         <div className="navigation">
-            <RestroomList restrooms={filteredList}/>
+            <NavLink className="add-restroom" to="/add-restroom">Add Restroom</NavLink>
+            <RestroomList restrooms={restrooms}/>
         </div>
     )
 }

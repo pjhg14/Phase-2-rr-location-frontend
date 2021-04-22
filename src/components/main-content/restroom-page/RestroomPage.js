@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import RestroomList from "../../navigation/RestroomList";
 import CommentBox from "./CommentBox";
 import RestroomInfo from "./RestroomInfo";
 
 function RestroomPage() {
+    //Testing
+    // const user = useContext(UserContext)
+    //================================
+
     // Get Id of restroom from page params
     const { id } = useParams() 
 
@@ -33,7 +36,6 @@ function RestroomPage() {
     const { comments } = restroom
 
     function handleAddComment(newComment) {
-        // setComments([...comments, newComment])
         setRestroom({...restroom, comments:[...restroom.comments, newComment]})
     }
 

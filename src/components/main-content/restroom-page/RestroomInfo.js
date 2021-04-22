@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function RestroomInfo({ restroom, onLike, onDislike }) {
     // Destruct info from current restroom
     const {image, name, address, borough, hours, type, handicap, likes, dislikes} = restroom;
@@ -40,7 +38,7 @@ function RestroomInfo({ restroom, onLike, onDislike }) {
     return(
         <div className="info">
             <p className="restroom-name">{name}</p>
-            <img src={image}></img>
+            <img src={image} alt="restroom"></img>
 
             <p><label>🧭 Address:</label> {address}</p>
             <p><label>🏙  Borough:</label> {borough}</p>

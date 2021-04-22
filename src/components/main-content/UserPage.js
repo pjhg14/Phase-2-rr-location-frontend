@@ -1,6 +1,3 @@
-import { useEffect } from "react"
-import { useParams } from "react-router"
-
 function UserPage() {
     
     // comment list
