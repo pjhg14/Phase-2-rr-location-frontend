@@ -4,7 +4,8 @@ import { Dropdown } from "react-bootstrap";
 
 function User() {
     const user = useContext(UserContext)
-    const [username, setUsername] = useState("")
+    const [loginUsername, setLoginUsername] = useState("")
+    const [signUpUsername,setSignUpUsername] = useState("")
     const [error, setError] = useState("")
 
 
@@ -17,7 +18,7 @@ function User() {
                 .then((resp) => resp.json())
                 .then(queriedUsers => {
                     const queriedUser = queriedUsers.filter(user => {
-                        return user.name === username
+                        return user.name === loginUsername
                     })
                     //set current user
                     if (queriedUser.length > 0) {
@@ -32,6 +33,9 @@ function User() {
             //Error State: cannot operate with no username
             setError("Must have username")
         }
+
+        setSignUpUsername("")
+        setLoginUsername("")
     }
 
     function handleNewUser(event) {
@@ -44,7 +48,7 @@ function User() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                name: username
+                name: signUpUsername
             }),
         })
             .then((resp) => resp.json())
@@ -56,37 +60,40 @@ function User() {
             //Error State: cannot operate with no username
             setError("Must have username")
         }
-        
+
+        setSignUpUsername("")
+        setLoginUsername("")
     }
 
     return(
         <div className="user">
             <Dropdown>
                 <Dropdown.Toggle as={UserToggle} id="dropdown-basic">
-                    <label>Current User:</label>{user.get.name}
+                    <p className="login-text">Login</p>
                 </Dropdown.Toggle>
-
+                    
                 <Dropdown.Menu>
+                    <label className="user-login">Current User:</label>{user.get.name}
                     <Dropdown.Header>Login</Dropdown.Header>
                     <form className="user-form" onSubmit={handleFormSubmit}>
-                        <input type="text" name="username" placeholder="username" value={username} onChange={e => setUsername(e.target.value)}/>
+                        <input type="text" name="username" placeholder="username" value={loginUsername} onChange={e => setLoginUsername(e.target.value)}/>
                         <button type="submit">Enter</button>
                     </form>
                     <hr/>
                     <Dropdown.Header>Sign-up</Dropdown.Header>
                     <form className="user-form" onSubmit={handleNewUser}>
-                        <input type="text" name="username" placeholder="username" value={username} onChange={e => setUsername(e.target.value)}/>
+                        <input type="text" name="username" placeholder="username" value={signUpUsername} onChange={e => setSignUpUsername(e.target.value)}/>
                         <button type="submit">Enter</button>
                     </form>
                     <p className="error-text">{error}</p>
                 </Dropdown.Menu>
-            </Dropdown> 
+            </Dropdown>
         </div>
     )
 }
 
 const UserToggle = React.forwardRef(({children, onClick}, ref) => (
-    <div ref={ref} onClick={e => {
+    <div className="user-button" ref={ref} onClick={e => {
         e.preventDefault()
         onClick(e)
     }}>

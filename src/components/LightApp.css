@@ -116,6 +116,12 @@ a:hover {
     color: gray;
     border-left: solid black 5px;
 }
+/* .add-restroom {
+    --font-color: black;
+    --background-color: white;
+    color: var(--font-color);
+    background-color: var(--background-color);
+} */
 ul {
     list-style-type: none;
     margin: 0px;
@@ -199,6 +205,10 @@ textarea {
 label {
     font-weight: bold;
     text-align: left;
+}
+label.form {
+    white-space: pre-wrap;
+    display: block;
 }
 .comment-section {
     font-size: 18pt;

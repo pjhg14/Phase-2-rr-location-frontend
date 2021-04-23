@@ -20,9 +20,9 @@ function Nav({ restrooms }) {
     return(
         <div className={`navigation ${theme.get}`}>
             <div className="button-bar">
-                <NavLink className="add-restroom" to="/add-restroom">Add Restroom</NavLink>
                 <User/>
-                <button className="dm-toggle" onClick={handleDMToggle}>{theme.get === "light" ? "dark" : "light"} mode</button>
+                <button className={`dm-toggle ${theme.get}`} onClick={handleDMToggle}>{theme.get === "light" ? "🌚 Dark"  : "🌞 Light"}</button>
+                <NavLink className={`add-restroom ${theme.get}`} to="/add-restroom">➕ Restroom</NavLink>
             </div>
             <RestroomList restrooms={restrooms}/>
         </div>

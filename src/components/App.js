@@ -12,7 +12,7 @@ export const ThemeContext = React.createContext(null)
 export const UserContext = React.createContext(null)
 
 function App() {
-    const [theme, setTheme] = useState("dark")
+    const [theme, setTheme] = useState("light")
     const themeState = {
         get: theme,
         set: setTheme
@@ -46,7 +46,8 @@ function App() {
                     <Switch>
                         <Route exact path="/">
                             <div className="main-content home">
-                                <img className="home-img" src="/rrphotos/gender_neutral_bathroom_img.png" alt="home-img"/>
+                                <img className="home-img" 
+                                    src={`/rrphotos/${theme === "light" ? "toilet.png" : "toilet_dark.jpg"}`} alt="home-img"/>
                                 <p className="home-text">Please select a restroom</p>
                             </div>
                             
