@@ -45,8 +45,11 @@ function App() {
                     <Nav restrooms={restrooms}/>
                     <Switch>
                         <Route exact path="/">
-                            <img className="home-img" src="" alt="home-img"/>
-                            <p>Please select a restroom</p>
+                            <div className="main-content home">
+                                <img className="home-img" src="/rrphotos/gender_neutral_bathroom_img.png" alt="home-img"/>
+                                <p className="home-text">Please select a restroom</p>
+                            </div>
+                            
                         </Route>
                         <Route exact path="/add-restroom">
                             <AddRestroomPage onRestrommAdd={handleAddRestroom}/>

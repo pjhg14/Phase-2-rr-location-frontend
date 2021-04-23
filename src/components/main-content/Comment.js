@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { UserContext } from "../App";
+
 function Comment({ comment, onCommentDelete }) {
+    const user = useContext(UserContext)
     const {id, author, content} = comment
 
     function handleDeleteComment() {
@@ -16,7 +20,9 @@ function Comment({ comment, onCommentDelete }) {
         <div className="comment">
             <p>User: {author}</p>
             <p className="border-bottom">Comment: {content}</p>
-            <button className="delete-button" onClick={() => handleDeleteComment()}>Delete</button>
+            {user.get.name.toLowerCase() === author.toLowerCase() &&
+                <button className="delete-button" onClick={() => handleDeleteComment()}>Delete</button>
+            }
         </div>
     )
 }

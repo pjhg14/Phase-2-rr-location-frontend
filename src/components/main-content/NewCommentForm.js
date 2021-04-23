@@ -1,15 +1,16 @@
 import {useContext, useState} from "react";
-import { ThemeContext } from "../App";
+import { ThemeContext, UserContext } from "../App";
 
 function NewCommentForm({ id, onCommentAdd, setAddComment }) {
     const theme = useContext(ThemeContext)
+    const user = useContext(UserContext)
     const [content, setContent] = useState("");
     
     function handleSubmit(event) {
         event.preventDefault();
 
         let newComment = {
-            author: "Anon", 
+            author: user.get.name, 
             content: content, 
             restroomId: parseInt(id)
         }

@@ -41,7 +41,7 @@ function AddRestroomPage({ onRestrommAdd }) {
     }
 
     return(
-        <div className="restroom-form">
+        <div className="main-content restroom-form">
             <h1>Suggest new restroom</h1>
             <form onSubmit={handleFormSubmit}>
                 <label>

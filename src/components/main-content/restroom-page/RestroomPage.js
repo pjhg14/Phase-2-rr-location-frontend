@@ -30,7 +30,7 @@ function RestroomPage() {
     }, [id]);
 
     // show loading screen until useEffect has fired
-    if (!isLoaded) return <h2>Loading...</h2>;
+    if (!isLoaded) return <h2 className="main-content">Loading...</h2>;
 
     // Destruct comments from restroom
     const { comments } = restroom
@@ -56,7 +56,7 @@ function RestroomPage() {
 
     // Rendering elements
     return(
-        <div className="restroom-page">
+        <div className="main-content restroom-page">
             <RestroomInfo restroom={restroom} onLike={handleLikeInc} onDislike={handleDislikeInc}/>
             <CommentBox id={id} commentList={comments} handleAddComment={handleAddComment} handleDeleteComment={handleDeleteComment}/>
         </div>

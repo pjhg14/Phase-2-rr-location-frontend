@@ -5,7 +5,7 @@ function UserPage() {
     // filter comments to current user's comments
 
     return(
-        <div className="user-info">
+        <div className="main-content user-info">
             <h3>User:</h3>
             <p>username</p>
 

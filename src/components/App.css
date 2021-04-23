@@ -72,11 +72,30 @@ button.delete-button {
     color: white;
     margin-left: 0;
 }
-.restroom-page {
+.main-content {
+    justify-content: center;
+    max-width: 480px;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.home-img {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+}
+.home-text {
+    text-align: center;
+    margin-left: 30px;
+}
+/* .restroom-page {
     justify-content: center;
     max-width: 480px;
 
-}
+} */
 .border-bottom {
     border-bottom: 1px solid black;
 }
@@ -109,9 +128,11 @@ button.delete-button {
     overflow: scroll;
 
 }
-/* .restroom-page {
-    max-height: 600px;
-} */
+.dropdown-menu {
+    color: black;
+    background-color: white;
+    border: 3px black solid;
+}
 p {
     margin: 0;
     text-align: left;
