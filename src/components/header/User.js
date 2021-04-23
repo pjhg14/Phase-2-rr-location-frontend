@@ -14,7 +14,7 @@ function User() {
 
         if (event.target.username.value !== "") {
             //submit form
-            fetch("http://localhost:4000/users")
+            fetch("https://salty-retreat-11658.herokuapp.com/users")
                 .then((resp) => resp.json())
                 .then(queriedUsers => {
                     const queriedUser = queriedUsers.filter(user => {
@@ -42,7 +42,7 @@ function User() {
         event.preventDefault()
 
         if (event.target.value !== "") {
-            fetch("http://localhost:4000/users", {
+            fetch("https://salty-retreat-11658.herokuapp.com/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

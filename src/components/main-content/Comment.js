@@ -6,7 +6,7 @@ function Comment({ comment, onCommentDelete }) {
     const {id, author, content} = comment
 
     function handleDeleteComment() {
-        fetch("http://localhost:4000/comments/" + id, {
+        fetch("https://salty-retreat-11658.herokuapp.com/comments/" + id, {
             method: "DELETE",
         })
             .then((resp) => resp.json())

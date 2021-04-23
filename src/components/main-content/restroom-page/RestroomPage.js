@@ -21,7 +21,7 @@ function RestroomPage() {
 
     // When page loads, search server for restroom with current id; set such restroom to current restroom
     useEffect(() => {
-        fetch(`http://localhost:4000/restrooms/${id}?_embed=comments`)
+        fetch(`https://salty-retreat-11658.herokuapp.com/restrooms/${id}?_embed=comments`)
             .then((r) => r.json())
             .then((restroom) => {
                 setRestroom(restroom);

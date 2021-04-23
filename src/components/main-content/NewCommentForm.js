@@ -15,7 +15,7 @@ function NewCommentForm({ id, onCommentAdd, setAddComment }) {
             restroomId: parseInt(id)
         }
         
-        fetch("http://localhost:4000/comments", {
+        fetch("https://salty-retreat-11658.herokuapp.com/comments", {
             method: 'POST',
             headers: {
               "Content-type": "application/json"

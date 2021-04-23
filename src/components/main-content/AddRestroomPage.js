@@ -29,7 +29,7 @@ function AddRestroomPage({ onRestrommAdd }) {
         }
 
         // console.log(newRestroom)
-        fetch("http://localhost:4000/restrooms", {
+        fetch("https://salty-retreat-11658.herokuapp.com/restrooms", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

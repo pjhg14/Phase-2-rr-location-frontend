@@ -7,7 +7,7 @@ function RestroomInfo({ restroom, onLike, onDislike }) {
     const theme = useContext(ThemeContext)
 
     function handleLikeClick(newLikes) {
-        fetch(`http://localhost:4000/restrooms/${restroom.id}`, {
+        fetch(`https://salty-retreat-11658.herokuapp.com/restrooms/${restroom.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -24,7 +24,7 @@ function RestroomInfo({ restroom, onLike, onDislike }) {
     }
 
     function handleDislikeClick(newDislikes) {
-        fetch(`http://localhost:4000/restrooms/${restroom.id}`, {
+        fetch(`https://salty-retreat-11658.herokuapp.com/restrooms/${restroom.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

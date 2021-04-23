@@ -25,7 +25,7 @@ function App() {
     const [restrooms, setRestrooms] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:4000/restrooms")
+        fetch("https://salty-retreat-11658.herokuapp.com/restrooms")
             .then((resp) => resp.json())
             .then(queriedRestrooms => {
                 setRestrooms(queriedRestrooms)
@@ -50,7 +50,6 @@ function App() {
                                     src={`/rrphotos/${theme === "light" ? "toilet.png" : "toilet_dark.jpg"}`} alt="home-img"/>
                                 <p className="home-text">Please select a restroom</p>
                             </div>
-                            
                         </Route>
                         <Route exact path="/add-restroom">
                             <AddRestroomPage onRestrommAdd={handleAddRestroom}/>
