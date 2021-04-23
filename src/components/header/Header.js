@@ -17,7 +17,6 @@ function Header() {
                 New York City
             </h2>
             </div>
-            <User/>
         </div>
     )
 }

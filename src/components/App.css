@@ -33,12 +33,6 @@
     flex-direction: row;
     justify-content: center;
 }
-/* .title {
-    display: flex;
-    justify-content: space-evenly;
-    max-width: 900px;
-    align-items: center;
-} */
 h2 {
     font-size: 36pt;
     font-weight: normal;
@@ -62,9 +56,9 @@ h3 {
     margin-top: 30px;
 }
 .user-icon {
-    height: 50px;
-    width: 70px;
-    position: right;
+    height: 20px;
+    width: 30px;
+    padding-top: 10px;  
 }
 button.delete-button {
     width: 100%;
@@ -82,8 +76,6 @@ button.delete-button {
 }
 
 .logo {
-    /* height: 70px;
-    width: 60px; */
     margin: 0px;
     height: 35px;
     width: 30px;
@@ -91,30 +83,54 @@ button.delete-button {
     /* padding-bottom: 10px; */
 }
 .add-restroom {
-    padding: 10px;
     font-size: 12pt;
-    color: white;
-    border: 1px black solid;
-    background-color: black;
-    border-radius: 10px;
+    color: black;
+    border: none;
+    padding-top:5px;
 }
 .add-restroom:hover {
-    border-left: solid black 1px;
+    /* border-top: 3px solid black; */
+    border-left: none;
+}
+.add-restroom.dark {
+    color: white;
+}
+.add-restroom.dark:hover {
+    border: 0;
+}
+.add-comment {
+    color: black;
+}
+
+.add-comment.dark{
+    background-color: black;
+    color: white;
+}
+.user-login {
+    font-weight: normal;
+    font-size: 12pt;
 }
 .restroom-list {
     text-align: left;
     font-family: arial;
     width: 300px;
     font-size: 14pt;
-    overflow: scroll;
+    /* overflow: scroll; */
 
 }
 /* .restroom-page {
     max-height: 600px;
 } */
 p {
-    margin: 0;
     text-align: left;
+}
+.button-bar{
+    /* justify-content: space-evenly; */
+    display: flex;
+    flex: row;
+    padding-bottom: 10px;
+    /* padding-right: 100px; */
+    /* border-bottom: 3px solid gray; */
 }
 a {
     text-decoration: none;
@@ -158,14 +174,10 @@ img {
     text-align: center;
 }
 button {
-    /* border: none; */
-    /* padding: 10px; */
+    border: none;
     font-size: 12pt;
     margin-left: 20px;
-    /* background-color: #fff; */
-    border-radius: 10px;
-    border: none;
-    /* border-color: #f1f1f1 */
+    /* border-radius: 10px; */
     --font-color: black;
     --background-color: white;
     color: var(--font-color);
@@ -187,6 +199,7 @@ button.dark {
 }
 button:hover {
     color: grey;
+    border-radius: 0;
     /* border-left: 3px solid black; */
     /* font-weight: bold; */
     /* padding: 0; */
@@ -197,6 +210,7 @@ textarea {
     width: 400px;
     height: 200px;
     margin-top: 30px;
+    border-radius: 8px;
     --font-color: black;
     --background-color: white;
     color: var(--font-color);
@@ -204,6 +218,7 @@ textarea {
     
 }
 textarea.dark { 
+    border-radius: 8px;
     --font-color: #999999;
     --background-color: black;
     --border-color: white;
@@ -239,12 +254,49 @@ label {
     font-weight: bold;
     text-align: left;
 }
+.restroom-form {
+    text-align: left;
+}
+input[type=text]{
+    height: 30px;
+    margin-top: 20px;
+    width: 250px;
+}
+select {
+    height: 30px;
+    width: 200px;
+    margin-top: 20px;
+
+}
+input[type=checkbox] {
+-webkit-transform: scale(2);
+  transform: scale(2);
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+
+}
 .comment-section {
     font-size: 18pt;
     letter-spacing: -2px;
     padding-bottom: 5px;
     /* text-decoration: underline;  */
+} 
+.dm-toggle {
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 0;
 }
+.dm-toggle.dark {
+    background-color: black;
+    color: white;
+}
+.submit-restroom {
+    padding: 10px;
+    width: 80px;
+}
+
+
 body::-webkit-scrollbar {
     width: 1em;
   }

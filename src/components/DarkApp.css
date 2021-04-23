@@ -176,6 +176,12 @@ label {
     padding-bottom: 5px;
     /* text-decoration: underline;  */
 }
+/* .add-restroom.dark {
+    --font-color: white;
+    --background-color: black;
+    color: var(--font-color);
+    background-color: var(--background-color);
+} */
 body::-webkit-scrollbar {
     width: 1em;
   }

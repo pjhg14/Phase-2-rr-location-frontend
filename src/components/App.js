@@ -12,7 +12,7 @@ export const ThemeContext = React.createContext(null)
 export const UserContext = React.createContext(null)
 
 function App() {
-    const [theme, setTheme] = useState("dark")
+    const [theme, setTheme] = useState("light")
     const themeState = {
         get: theme,
         set: setTheme
