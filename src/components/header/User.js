@@ -19,21 +19,26 @@ function User() {
                     const queriedUser = queriedUsers.filter(user => {
                         return user.name === username
                     })
-                    //setcurrent user
+                    //set current user
                     if (queriedUser.length > 0) {
+                        setError("")
                         user.set(queriedUser[0])
                     } else{
-                        handleNewUser()
+                        //Error State: cannot find passed user
+                        setError("User not found, Try signing up!")
                     }
                 })
         } else {
-            //Error State: username is
+            //Error State: cannot operate with no username
             setError("Must have username")
         }
     }
 
-    function handleNewUser() {
-        fetch("http://localhost:4000/users", {
+    function handleNewUser(event) {
+        event.preventDefault()
+
+        if (event.target.value !== "") {
+            fetch("http://localhost:4000/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -44,8 +49,14 @@ function User() {
         })
             .then((resp) => resp.json())
             .then(addedUser => {
+                setError("")
                 user.set(addedUser)
             })
+        } else {
+            //Error State: cannot operate with no username
+            setError("Must have username")
+        }
+        
     }
 
     return(
@@ -56,12 +67,18 @@ function User() {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                    <Dropdown.Header>Login/Sign-up</Dropdown.Header>
+                    <Dropdown.Header>Login</Dropdown.Header>
                     <form className="user-form" onSubmit={handleFormSubmit}>
                         <input type="text" name="username" placeholder="username" value={username} onChange={e => setUsername(e.target.value)}/>
                         <button type="submit">Enter</button>
                     </form>
-                    <p>{error}</p>
+                    <hr/>
+                    <Dropdown.Header>Sign-up</Dropdown.Header>
+                    <form className="user-form" onSubmit={handleFormSubmit}>
+                        <input type="text" name="username" placeholder="username" value={username} onChange={e => setUsername(e.target.value)}/>
+                        <button type="submit">Enter</button>
+                    </form>
+                    <p className="error-text">{error}</p>
                 </Dropdown.Menu>
             </Dropdown> 
         </div>

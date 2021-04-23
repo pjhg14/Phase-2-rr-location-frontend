@@ -91,6 +91,13 @@ button.delete-button {
     text-align: center;
     margin-left: 30px;
 }
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.error-text {
+    color: firebrick;
+}
 /* .restroom-page {
     justify-content: center;
     max-width: 480px;
