@@ -25,7 +25,7 @@ function AddRestroomPage({ onRestrommAdd }) {
             hours: hours,
             handicap: accessible,
             likes: 0,
-            disliks: 0
+            dislikes: 0
         }
 
         // console.log(newRestroom)
