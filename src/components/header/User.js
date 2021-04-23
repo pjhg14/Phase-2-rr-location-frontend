@@ -74,7 +74,7 @@ function User() {
                     </form>
                     <hr/>
                     <Dropdown.Header>Sign-up</Dropdown.Header>
-                    <form className="user-form" onSubmit={handleFormSubmit}>
+                    <form className="user-form" onSubmit={handleNewUser}>
                         <input type="text" name="username" placeholder="username" value={username} onChange={e => setUsername(e.target.value)}/>
                         <button type="submit">Enter</button>
                     </form>
