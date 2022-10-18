@@ -23,6 +23,3 @@ Along with that, the user will be able to leave comments on the desired restroom
 * "Suggestions" are automatically added to database
 * Light/Dark mode button freezes on "Dark" sometimes
 * Light/Dark mode does not persist on reload
-
-## Presentation branch:
-State of this app when it was initially presented
